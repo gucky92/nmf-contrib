@@ -41,7 +41,7 @@ setup(
     long_description=README,
     long_description_content_type="text/markdown",
     # Credentials
-    author="Matthias Christenson & Igor Gotlibovych",
+    author="Matthias Christenson",
     author_email="gucky@gucky.eu",
     url="https://github.com/gucky92/nmf-contrib",
     license="BSD",
