@@ -17,7 +17,6 @@ import scipy.sparse as sp
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.utils import check_random_state, check_array
 from sklearn.utils.extmath import randomized_svd, safe_sparse_dot, squared_norm
-from sklearn.utils.extmath import safe_min
 from sklearn.utils.validation import check_is_fitted
 from sklearn.exceptions import ConvergenceWarning
 
@@ -1145,7 +1144,7 @@ def non_negative_factorization(X, W=None, H=None, n_components=None,
                          "Use 'mu' solver or remove NaN from the input X."
                          % solver)
 
-    if safe_min(X) == 0 and beta_loss <= 0:
+    if np.nanmin(X) == 0 and beta_loss <= 0:
         raise ValueError("When beta_loss <= 0 and X contains zeros, "
                          "the solver may diverge. Please add small values to "
                          "X, or use a positive beta_loss.")

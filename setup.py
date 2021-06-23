@@ -35,15 +35,15 @@ cmdclass = {'build_ext': build_ext} if USING_CYTHON else {}
 
 
 setup(
-    name="nmf",
+    name="nmf-gucky92",
     version=VERSION,
     description="NMF with missing values",
     long_description=README,
     long_description_content_type="text/markdown",
     # Credentials
-    author="Igor Gotlibovych",
-    author_email="igor.gotlibovych@gmail.com",
-    url="https://github.com/ig248/nmf-contrib",
+    author="Matthias Christenson & Igor Gotlibovych",
+    author_email="gucky@gucky.eu",
+    url="https://github.com/gucky92/nmf-contrib",
     license="BSD",
     # Package
     packages=find_packages(exclude=("tests",)),
@@ -51,6 +51,7 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
+        "cython",
         "scikit-learn",
     ],
     classifiers=[
